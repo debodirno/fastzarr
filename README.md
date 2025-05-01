@@ -1,2 +1,10 @@
-# fastzarr
-A fast, zero-overhead CLI and Python tool to list, describe, and sample large Zarr datasets
+# FastZarr
+
+`fastzarr` is a blazing-fast utility to explore Zarr datasets from the command line or Python. Whether your data lives on local disk, S3, or GCS, `fastzarr` helps you:
+
+- List all arrays and groups in the store
+- Describe shapes, dtypes, chunking, and estimated size
+- Sample small slices from arrays
+- Do all of the above **without fully loading arrays into memory**
+
+It's lightweight, dependency-light, and designed for **data scientists, engineers, and researchers** who need quick insight into large chunked datasets — without spinning up Jupyter or writing boilerplate code.
