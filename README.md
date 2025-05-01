@@ -8,3 +8,15 @@
 - Do all of the above **without fully loading arrays into memory**
 
 It's lightweight, dependency-light, and designed for **data scientists, engineers, and researchers** who need quick insight into large chunked datasets — without spinning up Jupyter or writing boilerplate code.
+
+* * *
+
+## Project Docs
+
+For how to install uv and Python, see [installation.md](installation.md).
+
+For development workflows, see [development.md](development.md).
+
+For instructions on publishing to PyPI, see [publishing.md](publishing.md).
+
+* * *
