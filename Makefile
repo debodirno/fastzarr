@@ -4,18 +4,18 @@
 
 .DEFAULT_GOAL := default
 
-.PHONY: add-trailing-newline build clean default install lint test upgrade
+.PHONY: build clean default install lint test upgrade
 
-default: add-trailing-newline install lint test
+default: install lint test
 
 install:
 	uv sync --all-extras --dev
 
-add-trailing-newline:
-	@git ls-files -z | xargs -0 -I {} sh -c 'if file "{}" | grep -q "text"; then perl -pi -e "s/(?<!\\n)\\z/\\n/" "{}"; fi'
-
 lint:
 	uv run python devtools/lint.py
+
+	@echo "Adding trailing newlines to all files, if needed..."
+	@git ls-files -z | xargs -0 -I {} sh -c 'if file "{}" | grep -q "text"; then perl -pi -e "s/(?<!\\n)\\z/\\n/" "{}"; fi'
 
 test:
 	uv run pytest
